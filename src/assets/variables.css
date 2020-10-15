@@ -1,0 +1,13 @@
+:root{
+    --form-color: #777777;
+    --text-color: aquamarine;
+    --select-text-color: #8a8a8a;
+    --button-background-color:rgb(162, 241, 43);
+    --button-text-color:#006e81;
+    --button-border-color: #006e81;
+    --date-placeholder-color: #8a8a8a;
+    --error-text-color: red;
+    --error-input-border: red;
+    --error-select-border: red;
+    --success-text-color: rgb(162, 241, 43);
+}
