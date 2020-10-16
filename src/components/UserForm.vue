@@ -274,31 +274,27 @@
 </template>
 
 <script>
-import { mapMutations, mapState } from "vuex";
+import { mapGetters, mapMutations, mapState } from "vuex";
 import { required } from "vuelidate/lib/validators";
 export default {
   computed: {
     ...mapState({
       user: state => {
         return state.user.user;
+      },
+      submit: state => {
+        return state.submit.submitMessage;
       }
     }),
-    submit: {
-      get() {
-        return this.$store.state.submit.submitMessage;
-      },
-      set(value) {
-        return (this.$store.state.submit.submitMessage = value);
-      }
-    }
+    ...mapGetters(["changeSubmitMessage"])
   },
   methods: {
     onSubmit() {
       this.$v.$touch();
       if (this.$v.$invalid) {
-        this.submit = "ERROR";
+        this.changeSubmitMessage("ERROR");
       } else {
-        this.submit = "SUCCESS";
+        this.changeSubmitMessage("SUCCESS");
         const newUser = {
           surname: this.user.surname,
           name: this.user.name,

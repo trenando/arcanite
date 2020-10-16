@@ -4,5 +4,9 @@ export default {
   },
   mutations: {},
   actions: {},
-  getters: {}
+  getters: {
+    changeSubmitMessage: state => value => {
+      state.submitMessage = value;
+    }
+  }
 };
