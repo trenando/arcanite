@@ -295,28 +295,7 @@ export default {
         this.changeSubmitMessage("ERROR");
       } else {
         this.changeSubmitMessage("SUCCESS");
-        const newUser = {
-          surname: this.user.surname,
-          name: this.user.name,
-          lastname: this.user.lastname,
-          date: this.user.date,
-          phoneNumber: this.user.phoneNumber,
-          gender: this.user.gender,
-          clientGroup: this.user.clientGroup,
-          doctor: this.user.doctor,
-          disableSms: this.user.disableSms,
-          index: this.user.index,
-          country: this.user.country,
-          region: this.user.region,
-          city: this.user.city,
-          street: this.user.street,
-          building: this.user.building,
-          document: this.user.document,
-          passIndex: this.user.passIndex,
-          passNumber: this.user.passNumber,
-          received: this.user.received,
-          receivedDate: this.user.receivedDate
-        };
+        const { ...newUser } = this.user;
         this.updateUser(newUser);
         this.$v.$reset();
       }
